@@ -1,5 +1,5 @@
 const React = require('react');
-const Publisher = require('./Publisher');
+import Publisher from './Publisher.jsx';
 
 class App extends React.Component {
   render() {

@@ -4,7 +4,7 @@ class Publisher extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      selectedPublisher: 'All'
+      selectedPublisher: 'Breaking News'
     };
     
     this.updatePublisher = this.updatePublisher.bind(this);
@@ -17,7 +17,7 @@ class Publisher extends React.Component {
     });
   } 
   render() {
-    const publishers = ['All', 'ARS', 'BBC News', 'CNBC', 'CNN', 'ESPN', 'IGN', 'NY Times', 'Polygon', 'Reuters', 'The Verge', 'WSJ'];
+    const publishers = ['Breaking News', 'ARS', 'BBC News', 'CNBC', 'CNN', 'ESPN', 'IGN', 'NY Times', 'Polygon', 'Reuters', 'The Verge', 'WSJ'];
     return (
       <ul className='publishers'>
         {/* <p>Selected source: {this.state.selectedSource}</p> */}
@@ -31,7 +31,6 @@ class Publisher extends React.Component {
             </li>
           )
         })} 
-        {/* need to pass in 'this' in line above if using es5 functions */}
       </ul>
     )
   }
