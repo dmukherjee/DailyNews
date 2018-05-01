@@ -1,22 +1,23 @@
 const React = require('react');
 const Proptypes = require('prop-types');
+import { Input, Label, Menu } from 'semantic-ui-react'
 
 function SelectPublisher(props) {
   const publishers = ['Breaking News', 'ARS', 'BBC News', 'CNBC', 'CNN', 'ESPN', 'IGN', 'NY Times', 'Polygon', 'Reuters', 'The Verge', 'WSJ'];
   return (
-    <ul className='publishers'>
+    <Menu vertical className='publishers'>
       {/* <p>Selected source: {this.state.selectedSource}</p> */}
       {publishers.map(source => {
         return (
-          <li 
+          <Menu.Item 
             style={source === props.selectedPublisher ? {color: '#d0021b'} : null}
             onClick={props.onSelect.bind(null, source)}
             key={source}>
             {source}
-          </li>
+          </Menu.Item>
         )
       })} 
-    </ul>
+    </Menu>
   )
 }
 
