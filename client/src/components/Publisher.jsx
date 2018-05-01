@@ -1,4 +1,29 @@
 const React = require('react');
+const Proptypes = require('prop-types');
+
+function SelectPublisher(props) {
+  const publishers = ['Breaking News', 'ARS', 'BBC News', 'CNBC', 'CNN', 'ESPN', 'IGN', 'NY Times', 'Polygon', 'Reuters', 'The Verge', 'WSJ'];
+  return (
+    <ul className='publishers'>
+      {/* <p>Selected source: {this.state.selectedSource}</p> */}
+      {publishers.map(source => {
+        return (
+          <li 
+            style={source === props.selectedPublisher ? {color: '#d0021b'} : null}
+            onClick={props.onSelect.bind(null, source)}
+            key={source}>
+            {source}
+          </li>
+        )
+      })} 
+    </ul>
+  )
+}
+
+SelectPublisher.prototypes = {
+  selectedPublisher: Proptypes.string.isRequired,
+  onSelect: Proptypes.func.isRequired
+}
 
 class Publisher extends React.Component {
   constructor (props) {
@@ -17,21 +42,13 @@ class Publisher extends React.Component {
     });
   } 
   render() {
-    const publishers = ['Breaking News', 'ARS', 'BBC News', 'CNBC', 'CNN', 'ESPN', 'IGN', 'NY Times', 'Polygon', 'Reuters', 'The Verge', 'WSJ'];
     return (
-      <ul className='publishers'>
-        {/* <p>Selected source: {this.state.selectedSource}</p> */}
-        {publishers.map(source => {
-          return (
-            <li 
-              style={source === this.state.selectedPublisher ? {color: '#d0021b'} : null}
-              onClick={this.updatePublisher.bind(null, source)}
-              key={source}>
-              {source}
-            </li>
-          )
-        })} 
-      </ul>
+      <div>
+        <SelectPublisher
+          selectedPublisher = {this.state.selectedPublisher}
+          onSelect={this.updatePublisher}
+        />
+      </div>
     )
   }
 }
