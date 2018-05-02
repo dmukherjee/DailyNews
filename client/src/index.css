@@ -4,7 +4,7 @@ body {
     Roboto,Oxygen-Sans,Ubuntu,Cantarell,
     Helvetica Neue,
     sans-serif;
-  background-color:lightgrey;
+    background-color:black
 }
 
 
@@ -13,7 +13,7 @@ li {
 }
 
 .container {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0, auto;
 }
 
@@ -21,4 +21,20 @@ li {
   margin: 10px;
   font-weight: bold;
   cursor: pointer;
+  width: 50px
 } 
+
+.news-title {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.news-Image {
+  width: 200px;
+  border-radius: 10%;
+}
+
+.news-item {
+  background-color:black;
+}
