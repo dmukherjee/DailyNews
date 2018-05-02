@@ -12,6 +12,14 @@ module.exports = {
         console.log('response ', response.data.articles)
         return response.data.articles;
       })
+  },
+  getNewsBySource: (source) => {
+    const encodedURI = window.encodeURI(`https://newsapi.org/v2/everything?sources=${source}&apiKey=${key}`)
+    return axios.get(encodedURI)
+      .then(response => {
+        console.log('response ', response.data.articles)
+        return response.data.articles;
+      })
   }
 }
 
