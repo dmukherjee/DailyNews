@@ -1,5 +1,6 @@
 const React = require('react');
 const Proptypes = require('prop-types');
+const api = require('../../../helpers/api.js');
 import { Input, Label, Menu } from 'semantic-ui-react'
 
 function SelectPublisher(props) {
@@ -30,17 +31,32 @@ class Publisher extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      selectedPublisher: 'Breaking News'
+      selectedPublisher: 'Breaking News',
+      news: null
     };
     
     this.updatePublisher = this.updatePublisher.bind(this);
   }
+
+  componentDidMount () {
+    this.updatePublisher(this.state.selectedPublisher);
+  }
+
   updatePublisher(source) {
     this.setState(() => {
       return {
-        selectedPublisher: source
+        selectedPublisher: source,
+        news: null
       }
     });
+    api.getTopStories(source)
+      .then(function(news) {
+        this.setState(function() {
+          return {
+            news: news
+          }
+        })
+    }.bind(this));
   } 
   render() {
     return (
@@ -49,6 +65,7 @@ class Publisher extends React.Component {
           selectedPublisher = {this.state.selectedPublisher}
           onSelect={this.updatePublisher}
         />
+        {JSON.stringify(this.state.news, null, 2)}
       </div>
     )
   }

@@ -33,6 +33,7 @@
     "webpack-dev-server": "^3.1.3"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "express": "^4.16.3",
     "mongoose": "^5.0.16",
     "proptypes": "^1.1.0",
