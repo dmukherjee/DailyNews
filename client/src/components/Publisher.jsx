@@ -1,10 +1,11 @@
 const React = require('react');
 const Proptypes = require('prop-types');
 const api = require('../../../helpers/api.js');
-import { Input, Label, Menu, Container, Grid, Segment, Image, Item } from 'semantic-ui-react'
+const moment = require('moment');
+import { Input, Label, Menu, Container, Grid, Segment, Image, Item, List, Header, Table, Card } from 'semantic-ui-react'
 
 const publishers = ['Breaking News', 'ars-technica', 'bbc-news', 'cnbc', 'cnn', 'espn', 'ign', 
-  'the-new-york-times', 'polygon', 'reuters', 'the-verge', 'the-wall-street-journal'];
+  'the-new-york-times', 'polygon', 'reuters', 'the-verge', 'the-wall-street-journal', 'the-washington-post'];
 const displayNames = {
   'Breaking News': 'Breaking News',
   'ars-technica': 'ARS',
@@ -17,17 +18,18 @@ const displayNames = {
   'polygon': 'Polygon', 
   'reuters': 'Reuters', 
   'the-verge': 'The Verge', 
-  'the-wall-street-journal': 'WSJ'
+  'the-wall-street-journal': 'WSJ',
+  'the-washington-post': 'Washington Post'
 }
 
 function SelectPublisher(props) {
   return (
-    <Menu fixed='left' inverted size='large' vertical>
+    <Menu inverted size='large' fixed='left' vertical style={{marginTop: 110, backgroundColor: 'black'}}>
       {/* <p>Selected source: {this.state.selectedSource}</p> */}
       {publishers.map(source => {
         return (
           <Menu.Item 
-            style={source === props.selectedPublisher ? {color: '#d0021b', fontWeight: 'bold'} : null}
+            style={source === props.selectedPublisher ? {color: '#d0021b', fontWeight: 'bold', borderColor: 'pink'} : null}
             onClick={props.onSelect.bind(null, source)}
             key={source}>
             {displayNames[source]}
@@ -40,55 +42,34 @@ function SelectPublisher(props) {
 
 function NewsGrid(props) {
   return (
-    <Segment.Group>
+    <Segment.Group style={{marginTop: -25, backgroundColor:'black'}}>
       {props.news.map((newsItem) => {
+        let publishedAt = moment(newsItem.publishedAt).fromNow();
         return ( 
-          <Segment className='news-item'>         
-          <Item.Group divided>
-            <a href={`${newsItem.url}`}>
+          <Card fluid centered raised style={{margin: '2rem', maxWidth: '95%', backgroundColor: 'black'}}>
+          <Segment style={{backgroundColor: '#2D333F', border: 'none'}}>  
+          <Item.Group divided className='news-item'> 
+            <a target="blank" href={`${newsItem.url}`}>
             <Item.Image className='news-Image'
               size='tiny'
               src={newsItem.urlToImage}
             />
-            <Item.Content>
-            <Item.Header as='a' className='news-title'>{newsItem.title}</Item.Header>
-            <Item.Description>{newsItem.description}</Item.Description>
+            <Item.Content style={{color:'white'}}>
+            <Item.Header className='news-title'>{newsItem.title}</Item.Header>
+            <Item.Description>
+              <div className='news-description'>{newsItem.description}</div>
+              <div className='news-publishtime'>{publishedAt}</div>
+            </Item.Description>
             </Item.Content>
             </a>
           </Item.Group> 
           </Segment>
+          </Card>
         )
       })}
     </Segment.Group>
   )
 }
-
-// function NewsGrid(props) {
-//   return (
-//     <ul>
-//       {props.news.map((newsItem) => {
-//         return (
-//           <Grid columns={2} divided key={newsItem.publishedAt} >
-//             <Grid.Row stretched>
-//               <a href={`${newsItem.url}`}>
-//               <Grid.Column>
-//                 <Segment><div className='news-title'>{newsItem.title}</div></Segment>
-//                 <Segment><div className='news-description'>{newsItem.description}</div></Segment>
-//               </Grid.Column>
-//               <Grid.Column>
-//                 <img
-//                   className='news-Image'
-//                   src={newsItem.urlToImage}
-//                 />
-//               </Grid.Column>
-//               </a>
-//             </Grid.Row>
-//           </Grid>
-//         )
-//       })}
-//     </ul>
-//   )
-// }
 
 SelectPublisher.prototypes = {
   selectedPublisher: Proptypes.string.isRequired,
@@ -139,19 +120,19 @@ class Publisher extends React.Component {
   } 
   render() {
     return (
-      <Grid>
-      {/* <div> */}
-      <Grid.Column left fixed width={3}>
-        <SelectPublisher
-          selectedPublisher = {this.state.selectedPublisher}
-          onSelect={this.updatePublisher}
-        />
+      <div> 
+      <Grid columns='equal'  style={{marginTop: 105}}>
+        <Grid.Column left='true' width={3}>
+          <SelectPublisher
+            selectedPublisher = {this.state.selectedPublisher}
+            onSelect={this.updatePublisher}
+          />
         </Grid.Column>
         <Grid.Column width={13}>
         {!this.state.news ? <p>Loading....</p> : <NewsGrid news={this.state.news} />}
         </Grid.Column>
-      {/* </div> */}
       </Grid>
+      </div>
     )
   }
 }
