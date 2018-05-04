@@ -1,7 +1,8 @@
-const React = require('react');
-const Proptypes = require('prop-types');
-const api = require('../../../helpers/api.js');
-const moment = require('moment');
+import React from 'react';
+import Proptypes from 'prop-types';
+import moment from 'moment';
+import $ from 'jquery'
+
 import { Input, Label, Menu, Container, Grid, Segment, Image, Item, List, Header, Table, Card } from 'semantic-ui-react'
 
 const publishers = ['Breaking News', 'ars-technica', 'bbc-news', 'cnbc', 'cnn', 'espn', 'ign', 
@@ -98,26 +99,34 @@ class Publisher extends React.Component {
         news: null
       }
     });
+    this.fetch(source);
+  }
+
+  fetch(source) {
     if (source === 'Breaking News') {
-      api.getTopStories(source)
-        .then(function(news) {
-          this.setState(function() {
-            return {
-              news: news
-            }
-        })
-      }.bind(this));
+      $.ajax({
+        type: 'GET',
+        url: '/topstories',
+        success: result => {
+          this.setState({
+            news: result
+          })
+        }
+      })
     } else {
-      api.getNewsBySource(source)
-      .then(function(news) {
-        this.setState(function() {
-          return {
-            news: news
-          }
-        })
-    }.bind(this));
-   }
-  } 
+      $.ajax({
+        type: 'GET',
+        url: '/newsbysource',
+        data: {source: source},
+        success: result => {
+          this.setState({
+            news: result
+          })
+        }
+      })
+    }
+  }
+
   render() {
     return (
       <div> 

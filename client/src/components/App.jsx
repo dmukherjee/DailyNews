@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 import Publisher from './Publisher.jsx';
 import Navbar from './Navbar.jsx';
 

@@ -34,12 +34,15 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "jquery": "^3.3.1",
     "moment": "^2.22.1",
     "mongoose": "^5.0.16",
     "proptypes": "^1.1.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "request": "^2.85.0",
     "semantic-ui-react": "^0.79.1"
   }
 }
