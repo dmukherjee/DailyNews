@@ -61,3 +61,15 @@ li {
   height: 80;
 }
 
+.share-network {
+  margin-right: 30px;
+  text-align: center;
+  /* vertical-align: bottom; */
+}
+
+.share-button {
+  margin-right: 5px;
+  display: inline-block;
+  margin-top: 5px;
+  cursor: pointer;
+}

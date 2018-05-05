@@ -2,7 +2,7 @@ import React from 'react';
 import Proptypes from 'prop-types';
 import moment from 'moment';
 import $ from 'jquery';
-import { TwitterShareButton, TwitterIcon, TumblrShareCount } from 'react-share';
+import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon} from 'react-share';
 
 import { Input, Label, Menu, Container, Grid, Segment, Image, Item, List, Header, Table, Card } from 'semantic-ui-react'
 
@@ -57,20 +57,25 @@ function NewsGrid(props) {
               src={newsItem.urlToImage}
             />
             <Item.Content style={{color:'white'}}>
-            <Item.Header className='news-title'>{newsItem.title}</Item.Header>
-            <Item.Description>
-              <div className='news-description'>{newsItem.description}</div>
-              <div className='news-publishtime'>{publishedAt}</div>
-            </Item.Description>
-            <Item.Extra style={{float: 'right'}}>
-              <TwitterShareButton
-                url={newsItem.url}
-                title={newsItem.title}>
-                <TwitterIcon
-                  size={32}
-                  round />
-             </TwitterShareButton>
-            </Item.Extra>
+              <Item.Header className='news-title'>{newsItem.title}</Item.Header>
+              <Item.Description>
+                <div className='news-description'>{newsItem.description}</div>
+                <div className='news-publishtime'>{publishedAt}</div>
+              </Item.Description>
+              <Item.Extra className='share-network' style={{float: 'right'}}>
+                <FacebookShareButton
+                  url={newsItem.url}
+                  quote={newsItem.title}
+                  className="share-button">
+                <FacebookIcon size={32} round />
+                </FacebookShareButton>
+                <TwitterShareButton
+                  url={newsItem.url}
+                  title={newsItem.title}
+                  className="share-button">
+                  <TwitterIcon size={32} round />
+                </TwitterShareButton>
+              </Item.Extra>
             </Item.Content>
             </a>
           </Item.Group> 
