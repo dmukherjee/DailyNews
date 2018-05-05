@@ -1,7 +1,8 @@
 import React from 'react';
 import Proptypes from 'prop-types';
 import moment from 'moment';
-import $ from 'jquery'
+import $ from 'jquery';
+import { TwitterShareButton, TwitterIcon, TumblrShareCount } from 'react-share';
 
 import { Input, Label, Menu, Container, Grid, Segment, Image, Item, List, Header, Table, Card } from 'semantic-ui-react'
 
@@ -61,6 +62,15 @@ function NewsGrid(props) {
               <div className='news-description'>{newsItem.description}</div>
               <div className='news-publishtime'>{publishedAt}</div>
             </Item.Description>
+            <Item.Extra style={{float: 'right'}}>
+              <TwitterShareButton
+                url={newsItem.url}
+                title={newsItem.title}>
+                <TwitterIcon
+                  size={32}
+                  round />
+             </TwitterShareButton>
+            </Item.Extra>
             </Item.Content>
             </a>
           </Item.Group> 
