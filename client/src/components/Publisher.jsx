@@ -49,20 +49,21 @@ function NewsGrid(props) {
         let publishedAt = moment(newsItem.publishedAt).fromNow();
         return ( 
           <Card fluid centered raised style={{margin: '2rem', maxWidth: '95%', backgroundColor: 'black'}}>
-          <Segment style={{backgroundColor: '#2D333F', border: 'none'}}>  
-          <Item.Group divided className='news-item'> 
-            <a target="blank" href={`${newsItem.url}`}>
+          <a target="blank" href={`${newsItem.url}`}>
+          <Item.Group divided className='news-item' style={{backgroundColor: '#2D333F', border: 'none'}}> 
+            <Item>
             <Item.Image className='news-Image'
-              size='tiny'
+              size='small'
               src={newsItem.urlToImage}
+              style={{margin: 20}}
             />
-            <Item.Content style={{color:'white'}}>
-              <Item.Header className='news-title'>{newsItem.title}</Item.Header>
+            <Item.Content>
+              <Item.Header style={{color:'white', marginTop: 20}} className='news-title'>{newsItem.title}</Item.Header>
               <Item.Description>
                 <div className='news-description'>{newsItem.description}</div>
                 <div className='news-publishtime'>{publishedAt}</div>
               </Item.Description>
-              <Item.Extra className='share-network' style={{float: 'right'}}>
+              <Item.Extra className='share-network' style={{marginRight: 20, marginTop: -20, textAlign: 'right'}}>
                 <FacebookShareButton
                   url={newsItem.url}
                   quote={newsItem.title}
@@ -77,9 +78,9 @@ function NewsGrid(props) {
                 </TwitterShareButton>
               </Item.Extra>
             </Item.Content>
-            </a>
+            </Item>
           </Item.Group> 
-          </Segment>
+          </a>
           </Card>
         )
       })}
