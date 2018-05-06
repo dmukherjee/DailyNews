@@ -4,7 +4,7 @@ import { Menu, Segment, Input, Button } from 'semantic-ui-react';
 const selectOptions = ['Top Stories', 'Most Viewed'];
 
 const Navbar = () => (
-  <Menu pointing secondary fixed='top' style={{height: 110}}>
+  <Menu pointing fixed='top' style={{height: 110}}>
       <Menu.Menu position='right'>
         <Menu.Item>
           <Input icon={{ name: 'search', link: true }} placeholder='Search by category' />

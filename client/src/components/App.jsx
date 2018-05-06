@@ -7,7 +7,7 @@ class App extends React.Component {
     return (
       <div className='container'>
         <div><Navbar /> </div>
-        <div className='plublisher' style={{marginTop: 120}}><Publisher /></div>
+        <div className='publisher'><Publisher /></div>
       </div>
     )
   }

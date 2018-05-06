@@ -23,10 +23,16 @@ li {
   width: 50px
 } 
 
+.publisher {
+  cursor: pointer;
+  margin-top: 120
+} 
+
 
 .news-Image {
   width: 170px;
   border-radius: 10%;
+  margin-top: 120;
 }
 
 .news-item {
