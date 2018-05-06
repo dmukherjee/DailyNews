@@ -6,9 +6,7 @@ import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon} fro
 
 import { Input, Label, Menu, Container, Grid, Segment, Image, Item, List, Header, Table, Card } from 'semantic-ui-react'
 
-const publishers = ['Breaking News', 'ars-technica', 'bbc-news', 'cnbc', 'cnn', 'espn', 'ign', 
-  'the-new-york-times', 'polygon', 'reuters', 'the-verge', 'the-wall-street-journal', 'the-washington-post'];
-const displayNames = {
+const PublisherNames = {
   'Breaking News': 'Breaking News',
   'ars-technica': 'ARS',
   'bbc-news': 'BBC News',
@@ -28,13 +26,13 @@ function SelectPublisher(props) {
   return (
     <Menu inverted size='large' fixed='left' vertical style={{marginTop: 110, backgroundColor: 'black'}}>
       {/* <p>Selected source: {this.state.selectedSource}</p> */}
-      {publishers.map(source => {
+      {Object.keys(PublisherNames).map(source => {
         return (
           <Menu.Item 
             style={source === props.selectedPublisher ? {color: '#d0021b', fontWeight: 'bold', borderColor: 'pink'} : null}
             onClick={props.onSelect.bind(null, source)}
             key={source}>
-            {displayNames[source]}
+            {PublisherNames[source]}
           </Menu.Item>
         )
       })} 
@@ -48,7 +46,7 @@ function NewsGrid(props) {
       {props.news.map((newsItem) => {
         let publishedAt = moment(newsItem.publishedAt).fromNow();
         return ( 
-          <Card fluid centered raised style={{margin: '2rem', maxWidth: '95%', backgroundColor: 'black'}}>
+          <Card fluid centered raised style={{margin: '2rem', maxWidth: '95%', backgroundColor: 'black'}} key={newsItem.url}>
           <a target="blank" href={`${newsItem.url}`}>
           <Item.Group divided className='news-item' style={{backgroundColor: '#2D333F', border: 'none'}}> 
             <Item>
