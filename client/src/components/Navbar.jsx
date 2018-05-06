@@ -1,16 +1,15 @@
-import React from 'react'
-import { Input, Label, Menu } from 'semantic-ui-react'
+import React from 'react';
+import { Menu, Segment, Input, Button } from 'semantic-ui-react';
+
+const selectOptions = ['Top Stories', 'Most Viewed'];
 
 const Navbar = () => (
-  <Menu fixed='top' style={{height: 110}}>
-      <Menu.Item
-        name='editorials'>
-        Editorials
-      </Menu.Item>
-      <Menu.Item
-        name='reviews'>
-        Reviews
-      </Menu.Item>
+  <Menu pointing secondary fixed='top' style={{height: 110}}>
+      <Menu.Menu position='right'>
+        <Menu.Item>
+          <Input icon={{ name: 'search', link: true }} placeholder='Search by category' />
+        </Menu.Item>
+      </Menu.Menu>
   </Menu>
 )
 
