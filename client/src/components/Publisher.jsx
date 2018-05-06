@@ -53,7 +53,7 @@ function NewsGrid(props) {
             <Item.Image className='news-Image'
               size='small'
               src={newsItem.urlToImage}
-              style={{margin: 20}}
+              style={{margin: 15}}
             />
             <Item.Content>
               <Item.Header style={{color:'white', marginTop: 20}} className='news-title'>{newsItem.title}</Item.Header>
