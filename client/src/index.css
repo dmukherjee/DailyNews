@@ -42,19 +42,19 @@ li {
 .news-title {
   font-size: 20px;
   font-weight: 500;
-  margin-bottom: 10px;
-  margin-bottom: 10px;
+  margin-Top: 5px;
+  margin-bottom: 5px;
 }
 
 .news-description {
   font-size: 15px;
   font-weight: 500;
   color: lightgray;
-  margin-bottom: 10px;
+  margin-right: 30px;
 }
 
 .news-publishtime {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 200;
   color: grey;
 }
@@ -68,14 +68,13 @@ li {
 }
 
 .share-network {
-  margin-right: 30px;
+  margin-right: 20px;
   text-align: center;
-  /* vertical-align: bottom; */
+  margin-top: -20px;
 }
 
 .share-button {
   margin-right: 5px;
   display: inline-block;
-  margin-top: 5px;
   cursor: pointer;
 }
