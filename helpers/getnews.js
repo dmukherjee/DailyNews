@@ -31,6 +31,7 @@ module.exports = {
 
   saveNews: (title, callback) => {
     let url = `https://newsapi.org/v2/everything?q=${title}&sortBy=relevancy&apiKey=${key}`
+    console.log(url);
     const options = {
       url: url,
       headers: {

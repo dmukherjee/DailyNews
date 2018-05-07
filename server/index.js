@@ -29,14 +29,17 @@ app.get('/newsbysource', function (req, res) {
 });
 
 app.get('/news', function(req, res) {
-  let title = `Bitcoin Investment - Buy Bitcoin | Bitcoin Trading | Digital Currency`;
+  let title = `Circle Rolls Out Crypto Investment App in 46 US States`;
   helper.saveNews(title, data => {
     // console.log('title!!!!!!!!!!!!!', title);
     let parsedData = JSON.parse(data);
     let articles = parsedData.articles;
     console.log('item', articles.length);
     database.save(articles);
-    res.send(articles);
+    let query = database.News.find({}).limit(20).sort({clickCount: -1});
+    query.exec(function(err, data) {
+      res.send(data);
+    });
   }) 
 })
 

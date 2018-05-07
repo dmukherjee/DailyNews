@@ -7,12 +7,13 @@ let newsSchema = mongoose.Schema({
     required: true,
     unique: true
   },
+  title: String,
   description: String,
-  publishedat: Date,
+  publishedAt: String,
   url: String,
-  urltoimage: String,
+  urlToImage: String,
   author: String,
-  clickCount: Number,
+  clickCount: 0,
   likeCount: Number
 })
 
@@ -24,11 +25,13 @@ let save = (newsArr) => {
     news = newsArr[0];
     let data = {
       id: news.title,
+      title: news.title,
       description: news.description,
-      publishedat: news.publishedAt,
+      publishedAt: news.publishedAt,
       url: news.url,
-      urltoimage: news.urlToImage,
-      authpr: news.author
+      urlToImage: news.urlToImage,
+      author: news.author,
+      clickCount: 0
     };
     News.findOneAndUpdate(
       { id: data.id }, 
