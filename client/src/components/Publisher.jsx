@@ -129,6 +129,15 @@ class Publisher extends React.Component {
       })
     } else if (source === 'Top Picks by Users') {
       console.log('Top Picks by users')
+      $.ajax({
+        type: 'GET',
+        url: '/news',
+        success: result => {
+          this.setState({
+            news: result
+          })
+        }
+      })
     } else {
       $.ajax({
         type: 'GET',
