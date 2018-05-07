@@ -4,10 +4,11 @@ import moment from 'moment';
 import $ from 'jquery';
 import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon} from 'react-share';
 
-import { Input, Label, Menu, Container, Grid, Segment, Image, Item, List, Header, Table, Card } from 'semantic-ui-react'
+import { Input, Label, Menu, Container, Grid, Segment, Image, Item, List, Header, Table, Card, Button } from 'semantic-ui-react'
 
 const PublisherNames = {
   'Breaking News': 'Breaking News',
+  'Top Picks by Users': 'Top Picks by Users',
   'ars-technica': 'ARS',
   'bbc-news': 'BBC News',
   'cnbc': 'CNBC',
@@ -18,8 +19,7 @@ const PublisherNames = {
   'polygon': 'Polygon', 
   'reuters': 'Reuters', 
   'the-verge': 'The Verge', 
-  'the-wall-street-journal': 'WSJ',
-  'the-washington-post': 'Washington Post'
+  'the-wall-street-journal': 'WSJ'
 }
 
 function SelectPublisher(props) {
@@ -127,6 +127,8 @@ class Publisher extends React.Component {
           })
         }
       })
+    } else if (source === 'Top Picks by Users') {
+      console.log('Top Picks by users')
     } else {
       $.ajax({
         type: 'GET',
@@ -139,6 +141,10 @@ class Publisher extends React.Component {
         }
       })
     }
+  }
+
+  onClick() {
+
   }
 
   render() {

@@ -27,5 +27,19 @@ module.exports = {
     request.get(options, (err, res, body) => {
       err? console.log('err') : callback(body);
     });
-  }
+  },
+
+  saveNews: (title, callback) => {
+    let url = `https://newsapi.org/v2/everything?q=${title}&sortBy=relevancy&apiKey=${key}`
+    const options = {
+      url: url,
+      headers: {
+        'User-Agent': 'request',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      }
+    };
+    request.get(options, (err, res, body) => {
+      err? console.log('err') : callback(body);
+    });
+  },
 }
