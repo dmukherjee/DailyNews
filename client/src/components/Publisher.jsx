@@ -4,11 +4,11 @@ import moment from 'moment';
 import $ from 'jquery';
 import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon} from 'react-share';
 
-import { Input, Label, Menu, Container, Grid, Segment, Image, Item, List, Header, Table, Card, Button } from 'semantic-ui-react'
+import { Menu, Grid, Segment, Image, Item, Header, Card, Button } from 'semantic-ui-react'
 
 const PublisherNames = {
-  'Breaking News': 'Breaking News',
-  'Top Picks by Users': 'Top Picks by Users',
+  'breaking-news': 'Breaking News',
+  'top-picks': 'User\'s Top Picks',
   'ars-technica': 'ARS',
   'bbc-news': 'BBC News',
   'cnbc': 'CNBC',
@@ -95,7 +95,7 @@ class Publisher extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      selectedPublisher: 'Breaking News',
+      selectedPublisher: 'breaking-news',
       news: null
     };
     
@@ -117,7 +117,7 @@ class Publisher extends React.Component {
   }
 
   fetch(source) {
-    if (source === 'Breaking News') {
+    if (source === 'breaking-news') {
       $.ajax({
         type: 'GET',
         url: '/topstories',
@@ -127,7 +127,7 @@ class Publisher extends React.Component {
           })
         }
       })
-    } else if (source === 'Top Picks by Users') {
+    } else if (source === 'top-picks') {
       console.log('Top Picks by users')
       $.ajax({
         type: 'GET',
