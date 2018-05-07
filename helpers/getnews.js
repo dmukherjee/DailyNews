@@ -7,7 +7,7 @@ let key = config.KEY
 module.exports = {
   getTopStories: (callback) => {
     const options = {
-      url: `https://newsapi.org/v2/top-headlines?country=us&apiKey=${key}`,
+      url: encodeURI(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${key}`),
       headers: {
         'User-Agent': 'request',
       }
@@ -19,7 +19,7 @@ module.exports = {
 
   getNewsBySource: (source, callback) => {
     const options = {
-      url: `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${key}`,
+      url: encodeURI(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${key}`),
       headers: {
         'User-Agent': 'request',
       }
@@ -30,7 +30,8 @@ module.exports = {
   },
 
   saveNews: (title, callback) => {
-    let url = `https://newsapi.org/v2/everything?q=${title}&sortBy=relevancy&apiKey=${key}`
+    let url = encodeURI(`https://newsapi.org/v2/everything?q=${title}&sortBy=relevancy&apiKey=${key}`);
+    console.log('url: ', url);
     console.log(url);
     const options = {
       url: url,
