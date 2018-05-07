@@ -13,7 +13,7 @@ let newsSchema = mongoose.Schema({
   url: String,
   urlToImage: String,
   author: String,
-  clickCount: 0,
+  clickCount: { type: Number, default: 1 },
   likeCount: Number
 })
 
@@ -30,8 +30,7 @@ let save = (newsArr) => {
       publishedAt: news.publishedAt,
       url: news.url,
       urlToImage: news.urlToImage,
-      author: news.author,
-      clickCount: 0
+      author: news.author
     };
     News.findOneAndUpdate(
       { id: data.id }, 
@@ -44,8 +43,22 @@ let save = (newsArr) => {
           console.log('updated');
         }
       }
-    )
+    ).then (
+    News.findOneAndUpdate(
+      { id: data.id }, 
+      {$inc : { clickCount : 1 }},
+      { new: true, upsert: true, setDefaultsOnInsert: true },
+      (err, success) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log('updated');
+        }
+      }
+    ))
   }
+
+
 }
 
 module.exports.save = save;
