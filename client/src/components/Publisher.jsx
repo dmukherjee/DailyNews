@@ -4,7 +4,7 @@ import moment from 'moment';
 import $ from 'jquery';
 import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon} from 'react-share';
 
-import { Menu, Grid, Segment, Image, Item, Header, Card, Button } from 'semantic-ui-react'
+import { Menu, Grid, Segment, Image, Item, Header, Card, Button, Label } from 'semantic-ui-react'
 
 const PublisherNames = {
   'breaking-news': 'Breaking News',
@@ -63,6 +63,8 @@ function NewsGrid(props) {
                   <div className='news-publishtime'>{publishedAt}</div>
                 </Item.Description>
                 <Item.Extra className='share-network' style={{marginRight: 20, marginTop: -20, textAlign: 'right'}}>
+                    {newsItem.clickCount > 0 ? (<Label className='news-viewcount' style={{backgroundColor:'white', overflow: 'hidden', color: '#3b5998'}}>
+                    {newsItem.clickCount > 1 ? `${newsItem.clickCount} views` : `${newsItem.clickCount} view`}</Label>) : ``} 
                   <FacebookShareButton
                     url={newsItem.url}
                     quote={newsItem.title}
