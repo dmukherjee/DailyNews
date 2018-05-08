@@ -19,7 +19,7 @@ let newsSchema = mongoose.Schema({
 
 let News = mongoose.model('News', newsSchema);
 
-let save = (newsArr) => {
+let save = (newsArr, cb) => {
   console.log('newsArr.length', newsArr[0]);
   if(newsArr.length) {
     news = newsArr[0];
@@ -50,15 +50,13 @@ let save = (newsArr) => {
       { new: true, upsert: true, setDefaultsOnInsert: true },
       (err, success) => {
         if (err) {
-          console.log(err);
+          cb(err, null);
         } else {
-          console.log('updated');
+          cb(null, true);
         }
       }
     ))
   }
-
-
 }
 
 module.exports.save = save;

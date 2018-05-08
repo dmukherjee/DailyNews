@@ -8,7 +8,7 @@ import { Menu, Grid, Segment, Image, Item, Header, Card, Button } from 'semantic
 
 const PublisherNames = {
   'breaking-news': 'Breaking News',
-  'top-picks': 'User\'s Top Picks',
+  'top-picks': 'Top Stories @ NewsDesk',
   'ars-technica': 'ARS',
   'bbc-news': 'BBC News',
   'cnbc': 'CNBC',
@@ -46,40 +46,41 @@ function NewsGrid(props) {
       {props.news.map((newsItem) => {
         let publishedAt = moment(newsItem.publishedAt).fromNow();
         return ( 
-          <Card fluid centered raised style={{margin: '2rem', maxWidth: '95%', backgroundColor: 'black'}} key={newsItem.url}>
-          <a target="blank" href={`${newsItem.url}`}>
-          <Item.Group divided className='news-item' style={{backgroundColor: '#2D333F', border: 'none'}}> 
-            <Item>
-            <Item.Image className='news-Image'
-              size='small'
-              src={newsItem.urlToImage}
-              style={{margin: 15}}
-            />
-            <Item.Content>
-              <Item.Header style={{color:'white', marginTop: 20}} className='news-title'>{newsItem.title}</Item.Header>
-              <Item.Description>
-                <div className='news-description'>{newsItem.description}</div>
-                <div className='news-publishtime'>{publishedAt}</div>
-              </Item.Description>
-              <Item.Extra className='share-network' style={{marginRight: 20, marginTop: -20, textAlign: 'right'}}>
-                <FacebookShareButton
-                  url={newsItem.url}
-                  quote={newsItem.title}
-                  className="share-button">
-                <FacebookIcon size={32} round />
-                </FacebookShareButton>
-                <TwitterShareButton
-                  url={newsItem.url}
-                  title={newsItem.title}
-                  className="share-button">
-                  <TwitterIcon size={32} round />
-                </TwitterShareButton>
-              </Item.Extra>
-            </Item.Content>
-            </Item>
-          </Item.Group> 
-          </a>
-          </Card>
+          (newsItem.title !== 'Undefined') ? (
+            <Card fluid centered raised style={{margin: '2rem', maxWidth: '95%', backgroundColor: 'black', boxShadow: '0 0 0 0', overflow: 'hidden'}} key={newsItem.url}>
+            <a target="blank" href={`${newsItem.url}`}>
+            <Item.Group divided className='news-item' style={{backgroundColor: '#2D333F', border: 'none'}}> 
+            <Item onClick={props.onClick.bind(null, newsItem)}>
+              <Item.Image className='news-Image'
+                size='small'
+                src={newsItem.urlToImage}
+                style={{margin: 15}}
+              />
+              <Item.Content>
+                <Item.Header style={{color:'white', marginTop: 20}} className='news-title'>{newsItem.title}</Item.Header>
+                <Item.Description>
+                  <div className='news-description'>{newsItem.description}</div>
+                  <div className='news-publishtime'>{publishedAt}</div>
+                </Item.Description>
+                <Item.Extra className='share-network' style={{marginRight: 20, marginTop: -20, textAlign: 'right'}}>
+                  <FacebookShareButton
+                    url={newsItem.url}
+                    quote={newsItem.title}
+                    className="share-button">
+                  <FacebookIcon size={32} round />
+                  </FacebookShareButton>
+                  <TwitterShareButton
+                    url={newsItem.url}
+                    title={newsItem.title}
+                    className="share-button">
+                    <TwitterIcon size={32} round />
+                  </TwitterShareButton>
+                </Item.Extra>
+              </Item.Content>
+              </Item>
+            </Item.Group> 
+            </a>
+            </Card>) : ''
         )
       })}
     </Segment.Group>
@@ -100,6 +101,7 @@ class Publisher extends React.Component {
     };
     
     this.updatePublisher = this.updatePublisher.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount () {
@@ -116,7 +118,17 @@ class Publisher extends React.Component {
     this.fetch(source);
   }
 
-  fetch(source) {
+  handleClick(item, source) {
+    console.log('title', item.title);
+    this.setState(() => {
+      return {
+        title: item.title
+      }
+    });
+    this.fetch('save-news', item.title);
+  }
+
+  fetch(source, title) {
     if (source === 'breaking-news') {
       $.ajax({
         type: 'GET',
@@ -138,6 +150,17 @@ class Publisher extends React.Component {
           })
         }
       })
+    } else if (source === 'save-news') {
+      console.log('save news')
+      $.ajax({
+        type: 'POST',
+        url: '/savenews',
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+        data: {title: title},
+        success: result => {
+          console.log('success!')
+        }
+      })
     } else {
       $.ajax({
         type: 'GET',
@@ -152,24 +175,20 @@ class Publisher extends React.Component {
     }
   }
 
-  onClick() {
-
-  }
-
   render() {
     return (
-      <div> 
-      <Grid columns='equal'  style={{marginTop: 105}}>
-        <Grid.Column left='true' width={3}>
-          <SelectPublisher
-            selectedPublisher = {this.state.selectedPublisher}
-            onSelect={this.updatePublisher}
-          />
-        </Grid.Column>
-        <Grid.Column width={13}>
-        {!this.state.news ? <p>Loading....</p> : <NewsGrid news={this.state.news} />}
-        </Grid.Column>
-      </Grid>
+      <div style={{backgroundColor:'black'}}> 
+        <Grid columns='equal' style={{marginTop: 105}}>
+          <Grid.Column left='true' width={3}>
+            <SelectPublisher
+              selectedPublisher = {this.state.selectedPublisher}
+              onSelect={this.updatePublisher}
+            />
+          </Grid.Column>
+          <Grid.Column width={13}>
+            {!this.state.news ? <p>Loading....</p> : <NewsGrid news={this.state.news} onClick={this.handleClick}/>}
+          </Grid.Column>
+        </Grid>
       </div>
     )
   }

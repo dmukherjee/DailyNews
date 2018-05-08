@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const helper = require('../helpers/getnews');
 const request = require('request');
-const database = require('../database/index')
+const database = require('../database/index');
 
 // var items = require('../database-mongo');
 
@@ -29,18 +29,25 @@ app.get('/newsbysource', function (req, res) {
 });
 
 app.get('/news', function(req, res) {
-  let title = `Circle Rolls Out Crypto Investment App in 46 US States`;
+  let query = database.News.find({}).limit(20).sort({clickCount: -1});
+  query.exec(function(err, data) {
+    res.send(data);
+  }) 
+})
+
+app.post('/savenews', function(req, res) {
+  console.log('body', req.body);
+  // let title = 'New York attorney general resigns'
+  let title = req.body.title;
+  // console.log('title!!!!!!!!!!!!!', title);
   helper.saveNews(title, data => {
-    // console.log('title!!!!!!!!!!!!!', title);
     let parsedData = JSON.parse(data);
     let articles = parsedData.articles;
     console.log('item', articles.length);
-    database.save(articles);
-    let query = database.News.find({}).limit(20).sort({clickCount: -1});
-    query.exec(function(err, data) {
-      res.send(data);
+    database.save(articles, (err, result) => {
+      err ? res.sendStatus(404) : res.sendStatus(201);
     });
-  }) 
+  })   
 })
 
 let port = process.env.PORT || 1128;
