@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open",
+    "start": "node server/index.js",
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/index.js",
-    "build": "webpack -p --config ./webpack.config.js --progress",
+    "build": "webpack  -p --config ./webpack.config.js --progress",
     "postinstall": "npm run build"
   },
   "repository": {
@@ -35,6 +35,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "jquery": "^3.3.1",
     "moment": "^2.22.1",

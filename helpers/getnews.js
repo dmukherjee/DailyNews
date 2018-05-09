@@ -1,8 +1,8 @@
 const request = require('request');
-const config = require('../config.js');
-// require('dotenv').config()
-;
-let key = config.KEY
+// const config = require('../config.js');
+const config = require('dotenv').config();
+
+let key = process.env.KEY
 
 module.exports = {
   getTopStories: (callback) => {

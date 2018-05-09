@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/newsdesk');
+const dotenv = require('dotenv').config();
+// mongoose.connect('mongodb://localhost/newsdesk');
+mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_SERVER}`);
+
 
 let newsSchema = mongoose.Schema({
   id: {

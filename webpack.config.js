@@ -1,5 +1,5 @@
 var path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 var SRC_DIR = path.join(__dirname, '/client/src');
 var DIST_DIR = path.join(__dirname, '/client/dist');
 
@@ -22,11 +22,5 @@ module.exports = {
       { test: /\.css$/, 
         use: [ 'style-loader', 'css-loader' ]}
     ]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: `${SRC_DIR}/index.html`
-    })
-  ],
-  mode: 'development'
+  }
 };
