@@ -4,7 +4,7 @@ import moment from 'moment';
 import $ from 'jquery';
 import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon} from 'react-share';
 
-import { Menu, Grid, Segment, Image, Item, Header, Card, Button, Label } from 'semantic-ui-react'
+import { Menu, Grid, Segment, Image, Item, Header, Card, Button, Label } from 'semantic-ui-react';
 
 const PublisherNames = {
   'breaking-news': 'Breaking News',
@@ -48,42 +48,42 @@ function NewsGrid(props) {
         return ( 
           (newsItem.title !== 'Undefined') ? (
             <Card fluid centered raised style={{margin: '2rem', maxWidth: '95%', backgroundColor: 'black', boxShadow: '0 0 0 0', overflow: 'hidden'}} key={newsItem.url}>
-            <a target="blank" href={`${newsItem.url}`}>
-            <Item.Group divided className='news-item' style={{backgroundColor: '#2D333F', border: 'none'}}> 
-            <Item onClick={props.onClick.bind(null, newsItem)}>
-              <Item.Image className='news-Image'
-                size='small'
-                src={newsItem.urlToImage}
-                style={{margin: 15}}
-              />
-              <Item.Content>
-                <Item.Header style={{color:'white', marginTop: 20}} className='news-title'>{newsItem.title}</Item.Header>
-                <Item.Description>
-                  <div className='news-description'>{newsItem.description}</div>
-                  <div className='news-publishtime'>{publishedAt}</div>
-                </Item.Description>
-                <Item.Extra className='share-network' style={{marginRight: 20, marginTop: -20, textAlign: 'right'}}>
-                    {newsItem.clickCount > 0 ? (<Label className='news-viewcount' style={{backgroundColor:'white', overflow: 'hidden', color: '#3b5998'}}>
-                    {newsItem.clickCount > 1 ? `${newsItem.clickCount} views` : `${newsItem.clickCount} view`}</Label>) : ``} 
-                  <FacebookShareButton
-                    url={newsItem.url}
-                    quote={newsItem.title}
-                    className="share-button">
-                  <FacebookIcon size={32} round />
-                  </FacebookShareButton>
-                  <TwitterShareButton
-                    url={newsItem.url}
-                    title={newsItem.title}
-                    className="share-button">
-                    <TwitterIcon size={32} round />
-                  </TwitterShareButton>
-                </Item.Extra>
-              </Item.Content>
-              </Item>
-            </Item.Group> 
-            </a>
+              <a target="blank" href={`${newsItem.url}`}>
+              <Item.Group divided className='news-item' style={{backgroundColor: '#2D333F', border: 'none'}}> 
+                <Item onClick={props.onClick.bind(null, newsItem)}>
+                <Item.Image className='news-Image'
+                  size='small'
+                  src={newsItem.urlToImage}
+                  style={{margin: 15}}
+                />
+                <Item.Content>
+                  <Item.Header style={{color:'white', marginTop: 20}} className='news-title'>{newsItem.title}</Item.Header>
+                  <Item.Description>
+                    <div className='news-description'>{newsItem.description}</div>
+                    <div className='news-publishtime'>{publishedAt}</div>
+                  </Item.Description>
+                  <Item.Extra className='share-network' style={{marginRight: 20, marginTop: -20, textAlign: 'right'}}>
+                      {newsItem.clickCount > 0 ? (<Label className='news-viewcount' style={{backgroundColor:'white', overflow: 'hidden', color: '#3b5998'}}>
+                      {newsItem.clickCount > 1 ? `${newsItem.clickCount} views` : `${newsItem.clickCount} view`}</Label>) : ``} 
+                    <FacebookShareButton
+                      url={newsItem.url}
+                      quote={newsItem.title}
+                      className="share-button">
+                    <FacebookIcon size={32} round />
+                    </FacebookShareButton>
+                    <TwitterShareButton
+                      url={newsItem.url}
+                      title={newsItem.title}
+                      className="share-button">
+                      <TwitterIcon size={32} round />
+                    </TwitterShareButton>
+                  </Item.Extra>
+                </Item.Content>
+                </Item>
+              </Item.Group> 
+              </a>
             </Card>) : ''
-        )
+          )
       })}
     </Segment.Group>
   )
