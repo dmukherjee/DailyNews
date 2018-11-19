@@ -111,6 +111,7 @@ class Publisher extends React.Component {
   }
 
   updatePublisher(source) {
+    window.scrollTo(0, 0);
     this.setState(() => {
       return {
         selectedPublisher: source,

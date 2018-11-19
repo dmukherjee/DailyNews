@@ -1,0 +1,246 @@
+{
+  "status": "ok",
+  "totalResults": 20,
+  "articles": [
+      {
+          "source": {
+              "id": "the-huffington-post",
+              "name": "The Huffington Post"
+          },
+          "author": "Carla Herreria",
+          "title": "Thousands Protest Across Spain After 5 Men Are Cleared Of Gang Rape",
+          "description": "The group is known as the \"wolf pack,\" named after a WhatsApp chat where they bragged about the assault.",
+          "url": "https://www.huffingtonpost.com/entry/spain-protests-wolfpack-rape-charges_us_5ae520bee4b04aa23f23a2af",
+          "urlToImage": "https://img.huffingtonpost.com/asset/5ae556ba1a00004400cdd28d.jpeg?cache=5QUqDG7XBw&ops=1200_630",
+          "publishedAt": "2018-04-29T05:27:00Z"
+      },
+      {
+          "source": {
+              "id": null,
+              "name": "Sportingnews.com"
+          },
+          "author": null,
+          "title": "Bellator 198, Fedor vs. Mir results: Fedor Emelianenko stops Frank Mir in first round",
+          "description": "Fedor Emelianenko has a response to those who believe he should hang up the gloves: He finishes Frank Mir in less than a minute.",
+          "url": "http://www.sportingnews.com/mma/news/bellator-198-results-fedor-emelianenko-frank-mir-emmanuel-sanchez-undercard-live-updates/y8amig1e8wuo1pi1y96lop23l",
+          "urlToImage": "http://images.performgroup.com/di/library/sporting_news/89/49/fedor-emelianenko-vs-frank-mir-staredown_bv4ua46aptri1h02ncet9pe3k.jpg?t=206971211",
+          "publishedAt": "2018-04-29T05:27:00Z"
+      },
+      {
+          "source": {
+              "id": null,
+              "name": "Sbnation.com"
+          },
+          "author": "Eric Stephen and Whitney Medworth",
+          "title": "Pelicans vs. Warriors 2018 live score: Game 1 kicks off in Golden State",
+          "description": "Anthony Davis and the New Orleans Pelicans take on Kevin Durant and the defending NBA champion Golden State Warriors in Game 1 of their second-round playoff series on Saturday night at Oracle Arena in Oakland, Calif.",
+          "url": "https://www.sbnation.com/nba/2018/4/28/17294690/warriors-pelicans-2018-time-tv-schedule-watch-live-online-game-1",
+          "urlToImage": "https://cdn.vox-cdn.com/thumbor/8MovhTEEuWtnUuQwFFDTipYptfk=/0x75:3000x1646/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/10740367/618928098.jpg.jpg",
+          "publishedAt": "2018-04-29T04:44:00Z"
+      },
+      {
+          "source": {
+              "id": null,
+              "name": "Latimes.com"
+          },
+          "author": "Pauline Repard",
+          "title": "Some people 'associated with' Central American caravan have entered US illegally, federal officials say",
+          "description": "A pregnant woman and some children were detected entering the U.S. through a treacherous canyon, border officials said in a statement. It was unclear if \"people associated with\" the caravan meant people who had actually taken part in the bus trek through Mexi…",
+          "url": "http://www.latimes.com/local/lanow/la-me-ln-sd-caravan-20180428-story.html",
+          "urlToImage": "http://www.latimes.com/resizer/5xgNfDE2BSygtpUc1cMsHhWZaXo=/1200x0/www.trbimg.com/img-5ae54833/turbine/la-me-ln-sd-caravan-20180428",
+          "publishedAt": "2018-04-29T04:21:42Z"
+      },
+      {
+          "source": {
+              "id": "the-washington-post",
+              "name": "The Washington Post"
+          },
+          "author": "https://www.facebook.com/paul.farhi",
+          "title": "At the White House correspondents' dinner, the buzz was reduced to a snore — until Michelle Wolf showed up",
+          "description": "With few celebrities and President Trump speaking at a rally instead, the 2018 gala had more of an industry reunion vibe.",
+          "url": "https://www.washingtonpost.com/lifestyle/style/at-the-white-house-correspondents-dinner-the-buzz-was-reduced-to-a-snore--until-michelle-wolf-showed-up/2018/04/29/854829b4-498f-11e8-8b5a-3b1697adcc2a_story.html",
+          "urlToImage": "https://www.washingtonpost.com/resizer/6QQOskp2IH6LvEEv4RZl7_n4NzI=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/ISGSP6CLKEI6RAT6DEHPV4PR5Y.jpg",
+          "publishedAt": "2018-04-29T04:13:06Z"
+      },
+      {
+          "source": {
+              "id": "the-wall-street-journal",
+              "name": "The Wall Street Journal"
+          },
+          "author": "Jonathan Cheng",
+          "title": "North Korea to Shut Down Nuclear Test Site in May",
+          "description": "Pyongyang plans to take steps to demonstrate the closure of the test site to the world as Kim Jong Un had reaffirmed his willingness to give up his nuclear weapons.",
+          "url": "https://www.wsj.com/articles/north-korea-to-shut-down-nuclear-test-site-in-may-1524971627",
+          "urlToImage": "https://images.wsj.net/im-8669/social",
+          "publishedAt": "2018-04-29T03:59:59Z"
+      },
+      {
+          "source": {
+              "id": "cnn",
+              "name": "CNN"
+          },
+          "author": "Clare Foran, CNN",
+          "title": "Trump weighs in on reports of Kremlin ties to Russian lawyer at Trump Tower meeting",
+          "description": "President Donald Trump suggested Saturday night that Russian President Vladimir Putin might have directed a Russian lawyer who met with Trump campaign associates in 2016 to disclose ties to Moscow recently in order to sow chaos for him in retaliation for aggr…",
+          "url": "https://www.cnn.com/2018/04/28/politics/trump-russian-lawyer-trump-tower-meeting/index.html",
+          "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/180428203802-02-trump-rally-0428-super-tease.jpg",
+          "publishedAt": "2018-04-29T03:41:20Z"
+      },
+      {
+          "source": {
+              "id": "the-new-york-times",
+              "name": "The New York Times"
+          },
+          "author": "Anita Gates",
+          "title": "Larry Harvey, the Man Behind Burning Man, Is Dead at 70",
+          "description": "Mr. Harvey’s anti-establishment festival evolved from a modest affair on a San Francisco beach to a globally celebrated phenomenon in the Nevada desert.",
+          "url": "https://www.nytimes.com/2018/04/28/obituaries/larry-harvey-burning-man-festival-dead-at-70.html",
+          "urlToImage": "https://static01.nyt.com/images/2018/04/20/obituaries/harvey-obit-1/harvey-obit-1-facebookJumbo.jpg",
+          "publishedAt": "2018-04-29T01:42:40Z"
+      },
+      {
+          "source": {
+              "id": "cnn",
+              "name": "CNN"
+          },
+          "author": "Kaylee Hartung, Steve Almasy and Samira Said, CNN",
+          "title": "Video shows former football player involved in violent arrest",
+          "description": "A Georgia police officer involved in the arrest of former NFL prospect Desmond Marrow has been placed on administrative duty as investigators look into the use of force, part of which was captured on video by a bystander.",
+          "url": "https://www.cnn.com/2018/04/28/us/georgia-arrest-former-football-player/index.html",
+          "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/180428184652-desmond-marrow-interview-super-tease.jpg",
+          "publishedAt": "2018-04-29T00:25:01Z"
+      },
+      {
+          "source": {
+              "id": "the-washington-post",
+              "name": "The Washington Post"
+          },
+          "author": "https://www.facebook.com/timbontempsnba",
+          "title": "NBA playoffs live: Celtics-Bucks Game 7 underway; Anthony Davis confident about Warriors matchup",
+          "description": "New Orleans is set to enter uncharted territory against Golden State Saturday night, right after Boston and Milwaukee settle things once and for all in Game 7 at TD Garden.",
+          "url": "https://www.washingtonpost.com/news/sports/wp/2018/04/28/nba-playoffs-bucks-celtics-game-7-pelicans-warriors-game-1/",
+          "urlToImage": "https://www.washingtonpost.com/resizer/8zr0jxyZMiyVGAbaKaZHx_sBZU4=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/RSIKAVOD2A4GHIUPLCLSFDTTOY.jpg",
+          "publishedAt": "2018-04-29T00:11:15Z"
+      },
+      {
+          "source": {
+              "id": "bleacher-report",
+              "name": "Bleacher Report"
+          },
+          "author": "Mike Freeman",
+          "title": "Mike Freeman's NFL Draft Notebook: Shaquem Griffin and the Fear of the Unknown",
+          "description": "Why so many teams passed on  Shaquem Griffin , the winners and losers of the draft,  Andrew Luck  trade talk and more.                    1. A day of unknowns     Shaquem Griffin was the best story of this year's draft...",
+          "url": "http://bleacherreport.com/articles/2773183-mike-freemans-nfl-draft-notebook-shaquem-griffin-and-the-fear-of-the-unknown",
+          "urlToImage": "https://img.bleacherreport.net/img/images/photos/003/738/810/hi-res-5b5b43edb08400a6d7c27f6ed70f4bb7_crop_exact.jpg?w=1200&h=1200&q=75",
+          "publishedAt": "2018-04-28T23:44:41Z"
+      },
+      {
+          "source": {
+              "id": null,
+              "name": "Chicagotribune.com"
+          },
+          "author": "Erin Cunningham and Hazem Balousha",
+          "title": "Palestinian protesters are being shot in their legs by Israeli soldiers, and some face amputation",
+          "description": "In the past month, at least 17 Palestinians have suffered gunshot wounds that cost them their legs, according to the Palestinian Health Ministry in Gaza.",
+          "url": "http://www.chicagotribune.com/news/nationworld/ct-israel-palestinian-protesters-shot-20180428-story.html",
+          "urlToImage": "http://www.trbimg.com/img-5ae506c8/turbine/ct-israel-palestinian-protesters-shot-20180428",
+          "publishedAt": "2018-04-28T23:43:02Z"
+      },
+      {
+          "source": {
+              "id": "the-washington-post",
+              "name": "The Washington Post"
+          },
+          "author": "https://www.facebook.com/kristineaguerra",
+          "title": "Suspect in shooting death of Maine officer arrested after days-long manhunt",
+          "description": "Police say John D. Williams shot and killed an officer before driving away in his marked cruiser and robbing a convenience store in Maine.",
+          "url": "https://www.washingtonpost.com/news/post-nation/wp/2018/04/28/suspect-in-shooting-death-of-maine-officer-arrested-after-days-long-manhunt/",
+          "urlToImage": "https://www.washingtonpost.com/resizer/vdEfusumTembh5NaJk90CtZd13Y=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/PCIRS3NZXI2WHJV56N4V7O2C5A.jpg",
+          "publishedAt": "2018-04-28T20:29:05Z"
+      },
+      {
+          "source": {
+              "id": "the-washington-post",
+              "name": "The Washington Post"
+          },
+          "author": null,
+          "title": "US urges other nations to sanction Iran over ballistic missiles",
+          "description": "New Secretary of State Mike Pompeo came to Saudi Arabia, the target of Iranian-made missiles fired from Yemen, to discuss ways to counter the threat.",
+          "url": "https://www.washingtonpost.com/world/national-security/us-urges-other-nations-to-sanction-iran-over-ballistic-missiles/2018/04/28/eb7c8613-686d-4bff-b05a-7070f8611aea_story.html",
+          "urlToImage": "https://www.washingtonpost.com/resizer/rTgvbqfTA_AmYt26L5XjkSJHrNg=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/Q2GGI4CLD4I6RAT6DEHPV4PR5Y.jpg",
+          "publishedAt": "2018-04-28T20:09:49Z"
+      },
+      {
+          "source": {
+              "id": null,
+              "name": "Latimes.com"
+          },
+          "author": "Libby Hill",
+          "title": "Today in Kanye West's world: A surprise baby shower, a plastic surgeon and new music",
+          "description": "After a Twitter storm earlier this week, Kanye West has got a full plate, including a surprise baby shower for Chrissy Teigen and John Legend and new music, to boot.",
+          "url": "http://www.latimes.com/entertainment/la-et-entertainment-news-updates-2018-today-in-kanye-west-a-surprise-baby-1524939607-htmlstory.html",
+          "urlToImage": "http://www.latimes.com/resizer/_XxyOQyMubn70o9aMF57XgnnnBA=/1200x0/www.trbimg.com/img-5ae4b693/turbine/la-lb-media-apphoto_people-kardashianbabyname-20180428-105940/",
+          "publishedAt": "2018-04-28T19:38:38Z"
+      },
+      {
+          "source": {
+              "id": "the-new-york-times",
+              "name": "The New York Times"
+          },
+          "author": "Dan Barry, Tim Arango and Richard A. Oppel Jr.",
+          "title": "With Taunts and Guile, the Golden State Killer Left a Trail of Horror",
+          "description": "How a serial rapist and murderer in California flaunted his power as well as his belief that he could elude accountability forever. He was wrong.",
+          "url": "https://www.nytimes.com/2018/04/28/us/golden-state-killer-joseph-deangelo.html",
+          "urlToImage": "https://static01.nyt.com/images/2018/04/29/us/29clues-jp1/29clues-1-facebookJumbo.jpg",
+          "publishedAt": "2018-04-28T18:27:49Z"
+      },
+      {
+          "source": {
+              "id": null,
+              "name": "Slate.com"
+          },
+          "author": "Daniel Politi",
+          "title": "Skyscraper in Azerbaijan Once Meant to be Trump Hotel Catches Fires",
+          "description": "At least four people were injured in the fire that broke out at the 33-story building in Baku.",
+          "url": "https://slate.com/news-and-politics/2018/04/skyscraper-in-azerbaijan-once-meant-to-be-trump-hotel-catches-fire.html",
+          "urlToImage": "https://compote.slate.com/images/9d07a117-4b34-4983-8c02-e7b3fb0b9aa5.jpeg?width=780&height=520&rect=4864x3243&offset=0x0",
+          "publishedAt": "2018-04-28T17:20:46Z"
+      },
+      {
+          "source": {
+              "id": "the-new-york-times",
+              "name": "The New York Times"
+          },
+          "author": "https://www.nytimes.com/by/christina-caron",
+          "title": "Joy Reid Says She Did Not Write 'Hateful Things' but Cannot Prove Hacking",
+          "description": "The MSNBC host, whose recently resurfaced former blog posts include homophobic sentiments, discussed the controversy on her show on Saturday.",
+          "url": "https://www.nytimes.com/2018/04/28/business/media/joy-reid-hacking-msnbc.html",
+          "urlToImage": "https://static01.nyt.com/images/2018/04/29/us/29XP-REID/29XP-REID-facebookJumbo.jpg",
+          "publishedAt": "2018-04-28T17:03:14Z"
+      },
+      {
+          "source": {
+              "id": "usa-today",
+              "name": "USA Today"
+          },
+          "author": "Dustin Gardiner",
+          "title": "Arizona teachers' strike to continue Monday; Colorado ralliers pin hopes on ballot initiative",
+          "description": "Arizona, Colorado governors take different tact in dealing with educators demanding more money for classrooms and salaries.",
+          "url": "https://www.usatoday.com/story/news/politics/2018/04/27/teacher-walkouts-arizona-colorado/558218002/",
+          "urlToImage": "https://www.gannett-cdn.com/-mm-/d8dbe29a2cfcad235d5aaf008d1ec183fb27d2ee/c=0-480-899-988&r=x1683&c=3200x1680/local/-/media/2018/04/27/USATODAY/USATODAY/636604599381396460-042718colorado-teacher.jpg",
+          "publishedAt": "2018-04-28T01:44:06Z"
+      },
+      {
+          "source": {
+              "id": "the-hill",
+              "name": "The Hill"
+          },
+          "author": "Jacqueline Thomsen",
+          "title": "Stormy Daniels lawyer says she may file new claim against Trump",
+          "description": null,
+          "url": "http://thehill.com/homenews/administration/385297-stormy-daniels-lawyer-says-she-may-file-new-suit-against-trump",
+          "urlToImage": "http://thehill.com/sites/default/files/trumpdanielsstormy2.jpg",
+          "publishedAt": "2018-04-28T01:35:28Z"
+      }
+  ]
+}
